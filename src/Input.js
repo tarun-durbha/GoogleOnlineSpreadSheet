@@ -13,7 +13,7 @@ function Input(props) {
     return (
     <div>
         <label className="form-label">  
-            {props.name}
+            {props.placeholder}
         </label>
         <input type="text"
             id = {props.id}
