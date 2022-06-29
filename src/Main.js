@@ -1,6 +1,6 @@
-import React,{useState,useCallback,useMemo,useEffect, cloneElement} from 'react'
+import React,{useState,useCallback} from 'react'
 import "./Main.css"
-import { DataGrid,GridToolbar, GridRowsProp,GridColDef,GridActionsCellItem, GridRowId,GridColumns} from '@mui/x-data-grid';
+import { DataGrid,GridToolbar,GridActionsCellItem} from '@mui/x-data-grid';
 import DeleteIcon from '@mui/icons-material/Delete';
 import FileCopyIcon from '@mui/icons-material/FileCopy';
 import Button from '@mui/material/Button';
@@ -40,8 +40,6 @@ function Main() {
     const [rows, setRows] = useState(initialRows);
 
     const deleteUser = (id) => {
-        console.log(rows);
-        console.log(id);
         setLoading(true);
         setTimeout(() => {
           setRows((prevRows) => prevRows.filter((row) => row.id !== id));
@@ -56,7 +54,7 @@ function Main() {
         setTimeout(()=>{
           setRows((prevRows) => {
             var max = -1;
-            prevRows.map((row) => {
+            prevRows.forEach((row) => {
               if(row.id>max){
                 max = row.id
               }
@@ -117,7 +115,7 @@ function Main() {
       setTimeout(()=>{
         setRows((prevRows) => {
           var max = -1;
-          prevRows.map((row) => {
+          prevRows.forEach((row) => {
             if(row.id>max){
               max = row.id
             }
@@ -125,7 +123,7 @@ function Main() {
           const add = {
               id: (max+1)
           }
-          columns.map((col)=>{
+          columns.forEach((col)=>{
             if(col.field !== "actions"){
               add[col.field] = event.target[col.field].value;
             }
@@ -142,7 +140,7 @@ function Main() {
       setTimeout(()=>{
         setColumns((prevColumns) => {
           var toMade = 0
-          prevColumns.map((column,index) => {
+          prevColumns.forEach((column) => {
             if(column.type !== "actions"){
               toMade++;
             }
@@ -170,7 +168,7 @@ function Main() {
     >
       <Box sx={style}>
         <form onSubmit={handleSubmit}>
-          {columns.map((col)=>{
+          {columns.forEach((col)=>{
             if(col.field !== "actions"){
               return (<Input 
                 key  = {col.field}
