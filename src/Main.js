@@ -168,7 +168,7 @@ function Main() {
     >
       <Box sx={style}>
         <form onSubmit={handleSubmit}>
-          {columns.forEach((col)=>{
+          {columns.map((col)=>{
             if(col.field !== "actions"){
               return (<Input 
                 key  = {col.field}
@@ -176,6 +176,9 @@ function Main() {
                 placeholder= {col.headerName}
                 name = {col.field}
               />)
+            }
+            else{
+              return "";
             }
           })}
           <Button 
