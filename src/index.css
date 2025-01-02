@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=League+Spartan:wght@300&family=Montserrat&family=Roboto:wght@300;400&display=swap');
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}

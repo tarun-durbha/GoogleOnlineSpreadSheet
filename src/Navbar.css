@@ -1,0 +1,15 @@
+.navbar{
+    width: 100vw;
+    height: 10vh;
+    font-family: 'League Spartan', sans-serif;
+    background-image: linear-gradient(to bottom, rgb(0,191,255,0.9), rgb(0,191,255,0.1));
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: white;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

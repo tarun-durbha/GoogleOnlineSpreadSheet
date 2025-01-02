@@ -1,0 +1,12 @@
+.form-label{
+    display: block;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+input{
+    padding: 7px;
+    width: 100%;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+}
